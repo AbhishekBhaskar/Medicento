@@ -1,0 +1,180 @@
+@charset "utf-8";
+/* CSS Document */
+
+body,html
+{
+	height: 100%;
+	margin: 0;
+}
+
+*
+{
+	box-sizing: border-box;
+}
+
+.bkimg
+{
+	background-image: url(bgImg.jpg);
+	-webkit-filter:blur(8px);
+	height: 100%;
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+	opacity: 0.7;
+	position: relative;
+}
+
+.wrapper
+{
+	position: absolute;
+	z-index: 2;
+	top: 0;
+	left: 0;
+	width: 100%;
+}
+.topnav
+{
+	overflow: hidden;
+	width: 100%;
+	border: 1px solid rgba(150,145,145,1.00);
+	margin: 3px 5px 0 3px;
+	background-color: rgba(0,0,0,0.1);
+	border-radius: 3px;
+}
+
+
+.wrapper .topnav .r
+{
+	float: right;
+	color: black;
+	font-size: 20px;
+	padding: 5px;
+	margin-top: 15px;
+	margin-right: 3px;
+	border-radius: 5px;
+	background-color: rgba(0,0,0,0.1);
+	background-blend-mode: lighten;
+	position: relative;
+}
+.wrapper .topnav .r:hover
+{
+	opacity: 0.7;
+}
+
+
+.lgo
+{
+	width: 170px;
+	height: 90px;
+	object-fit: contain;
+	-webkit-transition: 1s;
+	float: left;
+	padding: 5px 0 0 10px;
+	position: relative;
+}
+
+.lgo:hover
+{
+	width: 190px;
+	height: 110px;
+}
+.subHeading
+{
+	width: 100%;
+	margin-top: 5px;
+	margin-left: 5px;
+	display: flex;
+}
+
+.content
+{
+	display: flex;
+	width: 100%;
+}
+.content .col_left
+{
+	float: left;
+	width: 35%;
+	background-color: rgba(0,0,0,0.3);
+	margin-left: 3px;
+	border-radius: 5px;
+}
+.content .col_right
+{
+	float: right;
+	width: 65%;
+	margin-right: 3px;
+}
+
+.btn
+{
+	border: 1px rgba(98,94,94,1.00);
+	border-radius: 5px;
+	width: auto;
+	height: auto;
+	background-color: rgba(0,0,0,0.6);
+	margin-left: 10px;
+}
+
+.btn:hover
+{
+	cursor: pointer;
+	opacity: 0.5;
+}
+
+.left_head
+{
+	display: flex;
+}
+
+.user_name,.email,.Phone,.address
+{
+	display: flex;
+	margin-top: 2px;
+}
+
+.btn_right
+{
+	width: auto;
+	height: auto;
+	border: 1px solid blue;
+	border-radius: 5px;
+	background-color: lightblue;
+}
+
+#b1
+{
+	margin-top: 8px;
+}
+#b4
+{
+	margin-top: 8px;
+}
+#p2
+{
+	padding-left: 90px;
+}
+.order
+{
+	width: 100%;
+	padding-left: 30px;
+}
+.order_div
+{
+	display: flex;
+}
+.panel-body
+{
+	width:50%;
+	
+}
+.order_middle
+{
+	float: right;
+}
+.order_right
+{
+	float: right;
+	padding-left: 25px;
+	padding-top: 10px;
+}
