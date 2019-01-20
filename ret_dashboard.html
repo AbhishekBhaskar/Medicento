@@ -1,0 +1,358 @@
+
+        <!DOCTYPE html>
+<html lang="en">
+    <head>
+        <!-- Required meta tags always come first -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>Dashboard</title>
+        <link rel="manifest" href="/manifest.json" />
+        <script src="https://cdn.onesignal.com/sdks/OneSignalSDK.js" async=""></script>
+        <script>
+            var OneSignal = window.OneSignal || [];
+            OneSignal.push(function() {
+                OneSignal.init({
+                    appId: "a73efdd9-5008-4c9e-aa1f-6dfcb5e68990",
+                    autoRegister: false,
+                    notifyButton: {
+                        enable: true,
+                    },
+                });
+            });
+        </script>
+        <link rel="stylesheet" href="dataTables.css">
+        <script>
+            window.onload = function () {
+            var chart = new CanvasJS.Chart("chartContainer", {
+                animationEnabled: true,
+                title: {
+                    text: "Medicine And Quantity"
+                },
+                axisX: {
+                    interval: 1,
+                    title: "Medicine"
+                },
+                axisY: {
+                    title: "Oty"
+                },
+                data: [{
+                    type: "bar",
+                    dataPoints: [
+                        { label: "E", y: 5 },
+                        { label: "D", y: 5 },
+                        { label: "C", y: 5 },
+                        { label: "B", y: 11 },
+                        { label: "A", y: 20 }
+                    ]
+                }]
+            });
+            chart.render();
+            var chart2 = new CanvasJS.Chart("chartContainer1", {
+                animationEnabled: true,
+                title: {
+                    text: "Manufacturer And S K U's"
+                },
+                axisX: {
+                    interval: 1,
+                    title: "Manufacturer"
+                },
+                axisY: {
+                    title: "S K U's"
+                },
+                data: [{
+                    type: "bar",
+                    dataPoints: [
+                        { label: "A Pharma", y: 5 },
+                        { label: "D Pharma", y: 2 },
+                        { label: "C Pharma", y: 10 },
+                        { label: "B Pharma", y: 15 },
+                        { label: "Bio Pharma", y: 20 }
+                    ]
+                }]
+                });
+            chart2.render(); 
+            }
+        </script>
+        <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+        <link rel="stylesheet" href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <link rel="stylesheet" href="pharma.css">
+        <!-- Bootstrap core CSS -->
+        <link href="style.min.css" rel="stylesheet">
+    </head>
+    <body>
+        <nav class="navbar navbar-inverse no-margin navbar-fixed-top">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header fixed-brand">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" id="menu-toggle">
+                <span class="glyphicon glyphicon-th-large" aria-hidden="true"></span>
+            </button>
+            <a class="navbar-brand" href="/pharmacy"><i class="fa fa-user"></i> Welcome @Team.Medicento</a>
+        </div>
+        <!-- navbar-header-->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="/pharmacy"><span class="glyphicon glyphicon-home"></span></a></li>
+                <li><a href="/pharmacy"><span class="glyphicon glyphicon-bell"></span></a></li>
+                <li><a href="/logout"><span class="glyphicon glyphicon-log-out"></span>Logout</a></li>       
+                <li><a href="/pharmacy"></a></li>     
+            </ul>
+        </div>
+        <!-- bs-example-navbar-collapse-1 -->
+        </nav>
+        <div id="wrapper">
+        <!-- Sidebar --> 
+        <div id="sidebar-wrapper">
+            <ul class="sidebar-nav nav-pills nav-stacked" id="menu">
+                 <li class="active">
+                
+                    <a href="/pharmacy"><span class="fa-stack fa-lg pull-left"><i class="fa fa-dashboard fa-stack-1x"></i></span> Dashboard</a>
+                </li>
+                 <li> 
+                    <a href="/pharmacy_orders"><span class="fa-stack fa-lg pull-left"><i class="fa fa-cart-arrow-down fa-stack-1x "></i></span>Orders</a>
+                </li>
+                <li> 
+                    <a href="/pharmacy_product"><span class="fa-stack fa-lg pull-left"><i class="fa fa-product-hunt fa-stack-1x "></i></span>Products</a>
+                </li>
+                <li>
+                    <a href="#"> <span class="fa-stack fa-lg pull-left"><i class="fa fa-bar-chart fa-stack-1x "></i></span>Sales</a>
+                </li>
+                <li>
+                    <a href="#"><span class="fa-stack fa-lg pull-left"><i class="fa fa-dollar fa-stack-1x "></i></span>Invoice Print</a>
+                </li>
+                <li>
+                    <a href="#"><span class="fa-stack fa-lg pull-left"><i class="fa fa-star fa-stack-1x "></i></span>Reviews</a>
+                </li>
+                <li>
+                    <a href="#"><span class="fa-stack fa-lg pull-left"><i class="fa fa-user fa-stack-1x "></i></span>Profile</a>
+                </li>
+                <li>
+                    <a href="#"><span class="fa-stack fa-lg pull-left"><i class="fa fa-cog fa-stack-1x "></i></span>Settings</a>
+                </li>
+            </ul>
+        </div>
+        <!-- /#sidebar-wrapper -->
+		
+      
+       
+        <div id="content">
+                    <div class="container">
+                        <h2 class="text-danger" >Medicento_Retailer_Test</h2>
+                        <div style="background: rgb(34,34,34);height: 2px;"></div>
+                        <h4 id="demo"> </h4>
+                        <div class="row">
+                         <!--   <div class="col-xs-12 col-md-6 col-lg-4" style="height: 240px;">-->
+                               <div class="order">
+                                <div class="panel panel-primary">
+                                    <div class="panel-heading">
+                                            <span style="margin-left:40%;">16 Order(s)</span> 
+                                    </div>
+                                    <div class="order_div">
+                                    <div class="panel-body">
+                                            <span>Approved 8</span>     
+                                            <div class="progress" style="margin-bottom: -1px;">
+                                                <div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="50" aria-valuemax="100" aria-valuemin="0" style="width: 50%">
+                                                </div>
+                                            </div>
+                                            <span >Pending 2</span>
+                                            <div class="progress" style="margin-bottom: -1px">
+                                                    <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="12.5" aria-valuemax="100" aria-valuemin="0" style="width: 12.5%">
+                                                    </div>
+                                            </div>
+                                            <span>Canceled 6</span>
+                                            <div class="progress" style="margin-bottom: -1px">
+                                                <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="37.5" aria-valuemax="100" aria-valuemin="0" style="width: 37.5%">
+                                                </div>
+                                            </div>
+                                    </div>
+                                    <div class="order_middle">
+                                    	<ul>
+                                    		<li><button onClick="disp2(this.id)" class="btn" id="b1">Click to display approved medicines</button></li><br>
+                                    		<li><button onClick="disp2(this.id)" class="btn" id="b2">Click to display pending medicines</button></li><br>
+                                    		<li><button onClick="disp2(this.id)" class="btn" id="b3">Click to display cancelled medicines</button></li>
+                                    	</ul>
+                                    </div>
+                                    <div class="order_right">
+                                    	<p id="demo2"></p>
+                                    </div>
+									</div>
+                                </div>
+                                </div>
+                            <!--</div>-->
+                      <!--      <div class="col-xs-12 col-md-6 col-lg-3">   -->
+                               <div class="order">
+                                <div class="panel panel-primary">
+                                    <div class="panel-heading">
+                                        <span style="margin-left:40%;">20 Product(s)</span>
+                                    </div>
+                                    <div class="order_div">
+                                    <div class="panel-body" id="p2">
+                                        <h4><strong>Top Selling</strong></h4>
+                                        <ul style="list-style: none;">
+                                            <li>
+                                              <strong>A</strong> - <span class="badge"> 17</span>
+                                            </li>
+                                            <li>
+                                                <strong>B</strong> - <span class="badge"> 8</span>
+                                            </li>
+                                            <li>
+                                                <strong>C</strong> - <span class="badge"> 3</span>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div class="order_middle" style="padding-right: 75px;">
+										<h4><strong>Products in stock</strong></h4>
+                                   			<ul>
+                                   				<li>Prod1</li>
+                                   				<li>Prod2</li>
+                                   				<li>Prod3</li>
+                                   			</ul>
+                                    </div>
+                                    <div class="order_right">
+                                    	<h4 style="margin-top: 5px;"><strong>Products low on stock</strong></h4>
+                                    	<ul>
+                                   				<li>Prod1</li>
+                                   				<li>Prod2</li>
+                                   				<li>Prod3</li>
+                                   			</ul>
+                                    </div>
+									</div>
+                                </div>
+                                </div>
+                       <!--     </div>  -->
+                      <!--      <div class="col-xs-12 col-md-6 col-lg-4" style="height: 240px;">  -->
+                                   <div class="order">
+                                        <div class="panel panel-primary">
+                                        <div class="panel-heading">
+                                                <span style="margin-left:40%;"> 17 Distributor</span> 
+                                        </div>
+                                         <div class="order_div">
+                                        <div class="panel-body">
+                                                <span>Shipped 3</span>     
+                                                <div class="progress" style="margin-bottom: -1px;">
+                                                    <div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="50" aria-valuemax="100" aria-valuemin="0" style="width: 50%">
+                                                    </div>
+                                                </div>
+                                                <span >Delivered 12</span>
+                                                <div class="progress" style="margin-bottom: -1px">
+                                                        <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="25" aria-valuemax="100" aria-valuemin="0" style="width: 25%">
+                                                        </div>
+                                                </div>
+                                                <span>Returned 2</span>
+                                                <div class="progress" style="margin-bottom: -1px">
+                                                    <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="25" aria-valuemax="100" aria-valuemin="0" style="width: 25%">
+                                                    </div>
+                                                </div>
+                                        </div>
+                                         <div class="order_middle">
+                                    	<ul>
+                                    		<li><button onClick="disp3(this.id)" class="btn" id="b4">Click to display shipped medicines</button></li><br>
+                                    		<li><button onClick="disp3(this.id)" class="btn" id="b5">Click to display delivered medicines</button></li><br>
+                                    		<li><button onClick="disp3(this.id)" class="btn" id="b6">Click to display returned medicines</button></li>
+                                    	</ul>
+                                    </div>
+                                    <div class="order_right">
+                                    	<p id="demo3"></p>
+                                    </div>
+											</div>
+                                    </div>
+							</div>
+                          <!--      </div>           -->
+                            </div>
+                            <div class="row">
+                                <div class="col-lg-5">
+                                    <div class="well">
+                                        <h4 class="text-danger">Lifetime Sales <span style="float: right;color: rgb(34,34,34);"><i class="fa fa-rupee"></i>1,50,000</span></h4>
+                                        <h4 style="color: rgb(34,34,34);">[ 27/08/18 - 28/02/19 ]</h4>
+                                    </div>
+                                </div>
+                                <div class="col-lg-5">
+                                    <div class="well">
+                                        <h4 class="text-primary">Total Profit<span style="float: right;color: rgb(34,34,34);"><i class="fa fa-rupee"></i>0</span></h4>
+                                        <h4 style="color: rgb(34,34,34);">[ Medicento Discount ]</h4>
+                                    </div>
+                                </div>
+                            </div>
+                            <h2> Recent Orders : </h2>
+                            <button class="btn btn-danger">All</button>
+                            <button class="btn btn-primary" style="margin-left: 20px;">Pending</button>
+                            <button class="btn btn-success" style="margin-left: 20px;">Delivered</button>
+                            <ul>
+                                <li><h4>Order # 0000-111-01123 is <span class="text-primary">Pending</span></h4></li>
+                                <li><h4>Order # 0000-111-01124 is <span class="text-primary">Delivered</span></h4></li>
+                                <li><h4>Order # 0000-111-01125 is <span class="text-primary">Pending</span></h4></li>
+                            </ul>                
+                        </div>        
+                    </div>
+            </div>
+            <!-- /#wrapper -->
+            <script src="js/jquery-3.3.1.min.js"></script>
+            <script src="js/pharma.js"></script>
+            
+           <script type="text/javascript">
+			  var d = new Date();
+			  var dd = d.getDate();
+			  var mm = d.getMonth()+1;
+			  var yyyy = d.getFullYear(); 
+			  document.getElementById("demo").innerHTML = "Date: "+dd+"-"+mm+"-"+yyyy;
+		</script>
+           
+           <script type="text/javascript">
+			   function appr()
+			   {
+				   var a = document.getElementById("demo2");
+				   a.innerHTML="Approved medicines are<br><ul><li>Med1</li><li>Med2</li><li>Med3</li></ul>";
+			   }
+			   function pend()
+			   {
+				   var a = document.getElementById("demo2");
+				   a.innerHTML="Pending medicines are<br><ul><li>Med1</li><li>Med2</li><li>Med3</li></ul>";
+			   }
+			   function canc()
+			   {
+				   var a = document.getElementById("demo2");
+				   a.innerHTML="Cancelled medicines are<br><ul><li>Med1</li><li>Med2</li><li>Med3</li></ul>";
+			   }
+			   
+			   function shipped()
+			   {
+				   var a = document.getElementById("demo3");
+				   a.innerHTML="Shipped medicines are<br><ul><li>Med1</li><li>Med2</li><li>Med3</li></ul>";
+			   }
+			   function delivered()
+			   {
+				   var a = document.getElementById("demo3");
+				   a.innerHTML="Delivered medicines are<br><ul><li>Med1</li><li>Med2</li><li>Med3</li></ul>";
+			   }
+			   function returned()
+			   {
+				   var a = document.getElementById("demo3");
+				   a.innerHTML="Returned medicines are<br><ul><li>Med1</li><li>Med2</li><li>Med3</li></ul>";
+			   }
+			   
+			   function disp2(clickedId)
+			   {
+				   
+				   if(clickedId=="b1")
+					   appr();
+				   else if(clickedId=="b2")
+					   pend();
+				   else if(clickedId=="b3")
+					   canc();
+			   }
+			   function disp3(clickedId2)
+			   {
+				   
+				   if(clickedId2=="b4")
+					   shipped();
+				   else if(clickedId2=="b5")
+					   delivered();
+				   else if(clickedId2=="b6")
+					   returned();
+			   }
+			</script>
+            
+        </body>
+</html>
